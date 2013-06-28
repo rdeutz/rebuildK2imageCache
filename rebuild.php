@@ -3,7 +3,7 @@
  * How to use:
  *
  * 1) Copy this file as rebuild.php into "JPATH_ROOT/media/k2/items"
- * 2) Check Variabels, use a size of 0 for not processing this image size
+ * 2) Check Variables, use a size of 0 for not processing this image size
  * 3) run it "php -f rebuild.php"
  *
  * @author Robert Deutz <rdeutz@googlemail.com>
@@ -26,7 +26,7 @@ $uploadclassfile = dirname(__FILE__).'/../../../administrator/components/com_k2/
 
 if(!file_exists($uploadclassfile))
 {
-  echo "Can't find class.upload.php! Is K2 installed? Do you copied rebuild.php to the right directroy?";
+  echo "Can't find class.upload.php! Is K2 installed? Did you copy rebuild.php to the right directory?";
 }
 
 define('_JEXEC',1);

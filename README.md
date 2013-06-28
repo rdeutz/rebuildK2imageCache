@@ -1,7 +1,9 @@
 rebuildK2imageCache
 ===================
 
-rebuilds the image cache directory for the Joomla Component K2
+Rebuilds the image cache directory for the Joomla Component K2
+
+It can take some time to rebuild the image cache, on my MacBook Pro it takes 5 seconds for rebuilding all sizes for one image. 
 
 How to use:
 

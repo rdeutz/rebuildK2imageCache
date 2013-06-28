@@ -11,4 +11,4 @@ How to use:
 
 2) Check Variables, use a size of 0 for not processing this image size
 
-3) run it "php -f rebuild.php"
+3) run it "php -f rebuild.php" (it overwrites existing files without notice)

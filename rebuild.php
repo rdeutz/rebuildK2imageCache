@@ -36,7 +36,7 @@ require_once ($uploadclassfile);
 $sourcedir = dirname(__FILE__).'/src';
 $targetdir = dirname(__FILE__).'/cache';
 
-$sizes = array('G' => $sizeG,'L' => $sizeL,'M' => $sizeM,'S' => $sizeS,'XL' => $sizeXL,'XS' => $sizeXS);
+$sizes = array('Generic' => $sizeG,'L' => $sizeL,'M' => $sizeM,'S' => $sizeS,'XL' => $sizeXL,'XS' => $sizeXS);
 
 if ($fhandle = opendir($sourcedir)) {
     while (false !== ($entry = readdir($fhandle)))

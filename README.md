@@ -13,7 +13,9 @@ How to use:
 
 ### ADDITIONAL INFO
 Current version is 1.1.
+
 It's compatible with all K2 versions in the 2.x series.
+
 It's not Joomla dependent so it will work on any Joomla release that has K2 installed.
 
 

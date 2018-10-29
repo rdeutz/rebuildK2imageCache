@@ -12,8 +12,7 @@ How to use:
 
 3) Execute via terminal with "php -f rebuild.php" (it overwrites existing files without notice!)
 
-
-*** CREDITS
+=== CREDITS
 Originally written by [Robert Deutz](https://github.com/rdeutz) and published here: https://github.com/rdeutz/rebuildK2imageCache
 
 Forked in Oct 2018 by JoomlaWorks with fixes to make the utility work in newer K2 versions (v2.8.0+). JoomlaWorks will further upgrade the utility (in upcoming releases) as a Joomla system plugin so it's not required to be executed via terminal and to allow for the utility to execute on demand and not in batch.

@@ -1,6 +1,8 @@
 rebuildK2imageCache
 ===================
 
+**Get the new Version by Joomlaworks: https://github.com/getk2/rebuildK2imageCache**
+
 Rebuilds the image cache directory for the Joomla Component K2
 
 It can take some time to rebuild the image cache, on my MacBook Pro it takes 5 seconds for rebuilding all sizes for one image. 

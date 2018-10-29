@@ -6,11 +6,16 @@ A command-line (terminal) utility to rebuild the image cache of K2 (a Joomla com
 Depending on the number of K2 items with images, this process can take some time to finish up.
 
 How to use:
-1) Place this file into "/media/k2/items/"
+- Place this file into "/media/k2/items/"
+- Adjust the variables section below; use a size of 0 if you DO NOT want to process a specific image size
+- Execute via terminal with "php -f rebuild.php" (it overwrites existing files without notice!)
 
-2) Adjust the variables section below; use a size of 0 if you DO NOT want to process a specific image size
 
-3) Execute via terminal with "php -f rebuild.php" (it overwrites existing files without notice!)
+### ADDITIONAL INFO
+Current version is 1.1.
+It's compatible with all K2 versions in the 2.x series.
+It's not Joomla dependent so it will work on any Joomla release that has K2 installed.
+
 
 ### CREDITS
 Originally written by [Robert Deutz](https://github.com/rdeutz) and published here: https://github.com/rdeutz/rebuildK2imageCache

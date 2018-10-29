@@ -1,5 +1,5 @@
-rebuildK2imageCache
-===================
+Rebuild K2 Image Cache
+===
 
 A command-line (terminal) utility to rebuild the image cache of K2 (a Joomla component).
 

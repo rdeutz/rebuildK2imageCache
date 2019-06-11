@@ -14,9 +14,20 @@
  * @date     June 11th, 2019
  * @TODO     Implement as Joomla system plugin
  *
+ * === CHANGELOG ===
+ * v1.2:
+ * - IMPORTANT change: the script must now be executed from your Joomla site's root folder (where your configuration.php file exists).
+ * - Conversion now works from the newest to the oldest source file. So your most recent images will be converted first (makes sense to do so).
+ * - Add range option so you can work in batches. Set the $from & $to variables to the range you want converted.
+ * - Added progress counter next to each source file name.
+ *
+ * v1.1:
+ * - Updated codebase to work with latest K2. The script will be maintained by JoomlaWorks from now on - thank you Robert!
+ *
+ * (end)
  */
 
-// Variables
+// New images sizes (width in pixels)
 $sizeXS = 80;
 $sizeS  = 160;
 $sizeM  = 320;
@@ -24,6 +35,10 @@ $sizeL  = 640;
 $sizeXL = 900;
 $sizeG  = 280;
 $jpeg_quality = 80;
+
+// Set conversion range (set to 0 to disable - default action)
+$from = 0;
+$to   = 0;
 
 
 
@@ -102,27 +117,48 @@ $sizes = array(
     'Generic' => $sizeG
 );
 
-// Convert the images
+// Count total images
+$all = count(glob($sourcedir."/*.jpg"));
+
+// --- Convert the images ---
+$filesByDateModified = array();
+$count = 0;
+
 if ($fhandle = opendir($sourcedir)) {
     while (false !== ($entry = readdir($fhandle))) {
         $file = $sourcedir.'/'.$entry;
-        if (is_file($file)) {
-            echo '.';
-            $r = buildImages($file, $targetdir, $sizes, $jpeg_quality);
-            if ($r === true) {
-                echo "File: ".$entry . " [OK]\n";
-            } else {
-                echo "File: ".$entry . " [FAILED]\n";
-                echo "Details:\n";
-                foreach ($sizes as $key => $value) {
-                    $result = 'Success';
-                    if (array_key_exists($key, $r)) {
-                        $result = 'Failed';
-                    }
-                    echo "Size $key ($value px): ".$result."\n";
-                }
-            }
+        if (is_file($file) && $entry != "." && $entry != "..") {
+            $filesByDateModified[filemtime($file)] = $file;
         }
     }
     closedir($fhandle);
+
+    // Reverse sort source image files by date modified (to begin converting the newest ones)
+    krsort($filesByDateModified);
+
+    foreach ($filesByDateModified as $timestamp => $file) {
+        $count++;
+        if ($from > 0 && $count < $from) {
+            continue;
+        }
+        if ($to > 0 && $count > $to) {
+            break;
+        }
+
+        $entry = str_replace($sourcedir.'/', '', $file);
+        $r = buildImages($file, $targetdir, $sizes, $jpeg_quality);
+        if ($r === true) {
+            echo "Source file {$count}/{$all}: ".$entry . " [OK]\n";
+        } else {
+            echo "Source file {$count}/{$all}: ".$entry . " [FAILED]\n";
+            echo "Details:\n";
+            foreach ($sizes as $key => $value) {
+                $result = 'Success';
+                if (array_key_exists($key, $r)) {
+                    $result = 'Failed';
+                }
+                echo "Size $key ({$value}px): ".$result."\n";
+            }
+        }
+    }
 }

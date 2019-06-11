@@ -110,9 +110,9 @@ if ($fhandle = opendir($sourcedir)) {
             echo '.';
             $r = buildImages($file, $targetdir, $sizes, $jpeg_quality);
             if ($r === true) {
-                echo "File: ".$entry . " SUCCESSFUL\n";
+                echo "File: ".$entry . " [OK]\n";
             } else {
-                echo "File: ".$entry . " FAIL\n";
+                echo "File: ".$entry . " [FAILED]\n";
                 echo "Details:\n";
                 foreach ($sizes as $key => $value) {
                     $result = 'Success';

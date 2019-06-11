@@ -9,7 +9,9 @@
  * @version  1.0
  * @author   Robert Deutz <rdeutz@googlemail.com>
  *
- * @version  1.2 (updated by JoomlaWorks on Jun 11th, 2019)
+ * @version  1.2
+ * @author   JoomlaWorks Ltd.
+ * @date     June 11th, 2019
  * @TODO     Implement as Joomla system plugin
  *
  */

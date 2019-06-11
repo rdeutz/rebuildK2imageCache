@@ -12,7 +12,6 @@
  * @version  1.2
  * @author   JoomlaWorks Ltd.
  * @date     June 11th, 2019
- * @TODO     Implement as Joomla system plugin
  *
  * === CHANGELOG ===
  * v1.2:
@@ -23,6 +22,10 @@
  *
  * v1.1:
  * - Updated codebase to work with latest K2. The script will be maintained by JoomlaWorks from now on - thank you Robert!
+ *
+ * === TO DO ===
+ * - Add option to resize source image
+ * - Implement as Joomla content or system plugin
  *
  * (end)
  */
